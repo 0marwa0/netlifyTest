@@ -112,7 +112,7 @@ const connectDB = async()=>{
 //const app = express();
 const router = express.Router();
 
-router.get("/:id", (req, res) => {
+router.get("/", (req, res) => {
     try {
       
    Store.findByIdAndUpdate(req.params.id, {
