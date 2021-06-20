@@ -1,6 +1,6 @@
 const express = require("express");
 const serverless = require("serverless-http");
-// const mongoose = require("mongoose");
+ const mongoose = require("mongoose");
 // const Store = require("./mainModules/store");
 
 const app = express();
