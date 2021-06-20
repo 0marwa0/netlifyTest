@@ -112,7 +112,7 @@ app.use(methodOverride(`_method`));
 //const app = express();
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
     try {
       
    Store.findByIdAndUpdate(req.params.id, {
@@ -133,7 +133,7 @@ router.get("/", (req, res) => {
     }
 });
 
-app.use(`/.netlify/functions/api/:id`, router);
+app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
