@@ -1,14 +1,14 @@
-// const express = require("express");
-// const serverless = require("serverless-http");
-// const mongoose = require("mongoose");
-// const Store = require("./mainModules/store");
-// const methodOverride = require("method-override");
-// var bodyParser = require("body-parser");
-// const app = express();
-// //const router = express.Router();
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(methodOverride(`_method`));
+const express = require("express");
+const serverless = require("serverless-http");
+const mongoose = require("mongoose");
+const Store = require("./mainModules/store");
+const methodOverride = require("method-override");
+var bodyParser = require("body-parser");
+const app = express();
+//const router = express.Router();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride(`_method`));
 // const connectDB = async()=>{
 //   try {
 //     await mongoose.connect("mongodb+srv://marwa:marwa@cluster0.9vo0e.mongodb.net/test", {
@@ -106,16 +106,31 @@
 
 
 
-const express = require("express");
-const serverless = require("serverless-http");
+// const express = require("express");
+// const serverless = require("serverless-http");
 
 const app = express();
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({
-    hello: "hi!"
-  });
+router.get("/:id", (req, res) => {
+    try {
+      
+   Store.findByIdAndUpdate(req.params.id, {
+      $set: { attendData: req.body.email },
+    }).then(() => {
+      Store.findOne({ _id: req.params.id }).then((data) => {
+        res.send(data);
+      });
+    }).catch((err) => {
+      res.status(500).json({
+        error: err,
+      });
+    })
+  
+  } catch {
+    console.lgo("somthing worng happend")
+  
+    }
 });
 
 app.use(`/.netlify/functions/api`, router);
