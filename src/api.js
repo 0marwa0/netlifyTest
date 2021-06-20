@@ -9,18 +9,18 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride(`_method`));
-const connectDB = async()=>{
-  try {
-    await mongoose.connect("mongodb+srv://marwa:marwa@cluster0.9vo0e.mongodb.net/test", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  });
-  } catch (error) {
-    console.log("error when connect to the datebase ",error)
-  }}
-  connectDB()
+// const connectDB = async()=>{
+//   try {
+//     await mongoose.connect("mongodb+srv://marwa:marwa@cluster0.9vo0e.mongodb.net/test", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false,
+//   });
+//   } catch (error) {
+//     console.log("error when connect to the datebase ",error)
+//   }}
+//   connectDB()
 //   app.post("/addattend", (req, res) => {
       
   
