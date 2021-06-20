@@ -113,24 +113,9 @@ const connectDB = async()=>{
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    try {
-      
-   Store.findByIdAndUpdate(req.params.id, {
-      $set: { attendData: req.body.email },
-    }).then(() => {
-      Store.findOne({ _id: req.params.id }).then((data) => {
-        res.send(data);
-      });
-    }).catch((err) => {
-      res.status(500).json({
-        error: err,
-      });
-    })
-  
-  } catch {
-    console.lgo("somthing worng happend")
-  
-    }
+  res.json({
+    hello: "hi!"
+  });
 });
 
 app.use(`/.netlify/functions/api`, router);
