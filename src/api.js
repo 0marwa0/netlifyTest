@@ -1,14 +1,14 @@
 const express = require("express");
 const serverless = require("serverless-http");
-const mongoose = require("mongoose");
-const Store = require("./mainModules/store");
-const methodOverride = require("method-override");
-var bodyParser = require("body-parser");
+// const mongoose = require("mongoose");
+// const Store = require("./mainModules/store");
+// const methodOverride = require("method-override");
+// var bodyParser = require("body-parser");
 const app = express();
 //const router = express.Router();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride(`_method`));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(methodOverride(`_method`));
 // const connectDB = async()=>{
 //   try {
 //     await mongoose.connect("mongodb+srv://marwa:marwa@cluster0.9vo0e.mongodb.net/test", {
