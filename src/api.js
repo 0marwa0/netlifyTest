@@ -5,7 +5,7 @@ const mongooseDB = require("mongoose");
  const router = express.Router();
  const connectDB = async()=>{
   try {
-    await mongoose.connect("mongodb+srv://marwa:marwa@cluster0.9vo0e.mongodb.net/test", {
+    await mongooseDB.connect("mongodb+srv://marwa:marwa@cluster0.9vo0e.mongodb.net/test", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
