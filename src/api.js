@@ -17,24 +17,24 @@ const mongooseDB = require("mongoose");
   connectDB()
 
 
-router.get("/getall", (req, res) => {
-    // res.json({
-    //        hello: "hi!"
-    //      });
-    try {Store.find()
-  .then((data) => {
-  res.send(data);
-    }) .catch((err) => {
-      res.status(500).json({
-        error: err,
-      });
-    });
-    } catch {
-      console.lgo("somthing worng happend")
-      }
-  });
+// router.get("/getall", (req, res) => {
+//     // res.json({
+//     //        hello: "hi!"
+//     //      });
+//     try {Store.find()
+//   .then((data) => {
+//   res.send(data);
+//     }) .catch((err) => {
+//       res.status(500).json({
+//         error: err,
+//       });
+//     });
+//     } catch {
+//       console.lgo("somthing worng happend")
+//       }
+//   });
 
-  app.get("/getsesstion", (req, res) => {console.log(req.params.id)
+  router.get("/getsesstion", (req, res) => {console.log(req.params.id)
     try {Store.findById(req.params.id)
   .then((data) => {
   res.send(data);
