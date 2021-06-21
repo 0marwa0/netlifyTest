@@ -18,17 +18,20 @@ const mongooseDB = require("mongoose");
 
 
   app.get("/getall", (req, res) => {
-    try {Store.find()
-  .then((data) => {
-  res.send(data);
-    }) .catch((err) => {
-      res.status(500).json({
-        error: err,
-      });
-    });
-    } catch {
-      console.lgo("somthing worng happend")
-      }
+    res.json({
+           hello: "hi!"
+         });
+  //   try {Store.find()
+  // .then((data) => {
+  // res.send(data);
+  //   }) .catch((err) => {
+  //     res.status(500).json({
+  //       error: err,
+  //     });
+  //   });
+  //   } catch {
+  //     console.lgo("somthing worng happend")
+  //     }
   });
 
   app.get("/getsesstion", (req, res) => {console.log(req.params.id)
