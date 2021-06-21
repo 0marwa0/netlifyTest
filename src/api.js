@@ -1,7 +1,7 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const mongooseDB = require("mongoose");
-const Store=require("../mainModules")
+const Store=require("../mainModules/store.js")
  const app = express();
  const router = express.Router();
  const connectDB = async()=>{
