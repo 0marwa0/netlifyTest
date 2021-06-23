@@ -53,8 +53,28 @@ router.get("/getall", (req, res) => {
      hello: "hi!"
    });
  });
- 
-  app.use(`/api`, router);
+//  router.put("/updateSesstion/:id", (req, res) => {
+//   try {
+    
+//  Store.findByIdAndUpdate(req.params.id, {
+//     $set: { attendData: req.body.email },
+//   }).then(() => {
+//     Store.findOne({ _id: req.params.id }).then((data) => {
+//       res.send(data);
+//     });
+//   }).catch((err) => {
+//     res.status(500).json({
+//       error: err,
+//     });
+//   })
+
+// } catch {
+//   console.lgo("somthing worng happend")
+
+//   }
+
+// });
+  app.use(`/.netlify/functions/api`, router);
  
  module.exports = app;
  module.exports.handler = serverless(app);

@@ -5,7 +5,7 @@ date:{type:Date},
 group:{type:String},
 stage:{type:String},
 courseName:{type:String}
-,attendData:{type:Array}
+,attendData:{type:String}
 ,admin:{type:String}
 })
 
