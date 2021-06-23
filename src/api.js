@@ -2,6 +2,15 @@ const express = require("express");
 const serverless = require("serverless-http");
 const mongooseDB = require("mongoose");
 const Store=require("../mainModules/store.js")
+
+
+
+var bodyParser = require("body-parser");
+//Middleware
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
  const app = express();
  const router = express.Router();
  const connectDB = async()=>{
