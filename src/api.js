@@ -35,24 +35,24 @@ router.get("/getall", (req, res) => {
       }
   });
 
-  // router.get("/getsesstion", (req, res) => {console.log(req.params.id)
-  //   try {Store.findById(req.params.id)
-  // .then((data) => {
-  // res.send(data);
-  //   }) .catch((err) => {
-  //     res.status(500).json({
-  //       error: err,
-  //     });
-  //   });
-  //   } catch {
-  //     console.lgo("somthing worng happend")
-  //     }
-  // });
-//  router.get("/", (req, res) => {
-//    res.json({
-//      hello: "hi!"
-//    });
-//  });
+  router.get("/getsesstion/:id", (req, res) => {
+    try {Store.findById(req.params.id)
+  .then((data) => {
+  res.send(data);
+    }) .catch((err) => {
+      res.status(500).json({
+        error: err,
+      });
+    });
+    } catch {
+      console.lgo("somthing worng happend")
+      }
+  });
+ router.get("/", (req, res) => {
+   res.json({
+     hello: "hi!"
+   });
+ });
  
   app.use(`/.netlify/functions/api`, router);
  
